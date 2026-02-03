@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Residential House — Project</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #f6f6f6;
+      --text-color: #111;
+      --muted-text: #666;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ---------------- NAV ---------------- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      background: rgba(246, 246, 246, 0.9);
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: #000;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------------- HEADER ---------------- */
+    .project-header {
+      padding: 160px 48px 120px;
+      max-width: 1100px;
+    }
+
+    .project-header h1 {
+      font-size: clamp(34px, 4vw, 56px);
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .project-header p {
+      max-width: 520px;
+      color: var(--muted-text);
+      font-size: 16px;
+    }
+
+    /* ---------------- CONTENT ---------------- */
+    .project-content {
+      padding: 0 48px 160px;
+      display: flex;
+      flex-direction: column;
+      gap: 160px;
+    }
+
+    .block {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .block img {
+      width: 100%;
+      height: auto;
+      display: block;
+      animation: fadeUp 1s ease both;
+    }
+
+    .block .text {
+      font-size: 15px;
+      color: var(--muted-text);
+      max-width: 420px;
+      animation: fadeUp 1s ease both;
+    }
+
+    /* ---------------- LAYOUT VARIATIONS ---------------- */
+
+    .img-large {
+      grid-column: 2 / span 10;
+    }
+
+    .img-medium-left {
+      grid-column: 2 / span 5;
+    }
+
+    .img-medium-right {
+      grid-column: 7 / span 5;
+    }
+
+    .img-small {
+      grid-column: 4 / span 4;
+    }
+
+    .text-left {
+      grid-column: 2 / span 4;
+    }
+
+    .text-right {
+      grid-column: 8 / span 4;
+    }
+
+    /* ---------------- ANIMATION ---------------- */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media (max-width: 900px) {
+      .block {
+        grid-template-columns: 1fr;
+      }
+
+      .img-large,
+      .img-medium-left,
+      .img-medium-right,
+      .img-small,
+      .text-left,
+      .text-right {
+        grid-column: 1 / -1;
+      }
+
+      .project-header,
+      .project-content {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .project-content {
+        gap: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">ARCHITECT</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">My Projects</a>
+      <a href="#">Other Projects</a>
+      <a href="#">CV</a>
+      <a href="contact.html">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="project-header">
+    <h1>Residential House</h1>
+    <p>
+      A private residence designed with a strong emphasis on material simplicity,
+      daylight, and the relationship between interior and exterior spaces.
+    </p>
+  </header>
+
+  <!-- Content -->
+  <section class="project-content">
+
+    <div class="block">
+      <img src="images/IMG_0823.png" class="img-large" alt="">
+    </div>
+
+    <div class="block">
+      <img src="images/IMG_0825.jpeg" class="img-medium-left" alt="">
+      <div class="text text-right">
+        The entrance sequence is defined by compression and release, guiding
+        visitors from the public realm into a more intimate domestic space.
+      </div>
+    </div>
+
+    <div class="block">
+      <img src="images/IMG_0827.png" class="img-medium-right" alt="">
+    </div>
+
+    <div class="block">
+      <div class="text text-left">
+        Material choices are limited to concrete, wood, and glass — allowing
+        light and shadow to become the primary architectural elements.
+      </div>
+      <img src="images/IMG_0829.png" class="img-medium-right" alt="">
+    </div>
+
+    <div class="block">
+      <img src="images/IMG_0848.png" class="img-large" alt="">
+    </div>
+
+    <div class="block">
+      <img src="images/IMG_0848.png" class="img-small" alt="">
+    </div>
+
+    <div class="block">
+      <img src="images/IMG_0860.jpeg" class="img-medium-left" alt="">
+      <img src="images/IMG_0847.png" class="img-medium-right" alt="">
+    </div>
+
+    <div class="block">
+      <div class="text text-left">
+        Interior spaces open toward the landscape, creating a seamless transition
+        between built form and nature.
+      </div>
+      <img src="images/IMG_0836.jpeg" class="img-medium-right" alt="">
+    </div>
+
+    <div class="block">
+      <img src="images/IMG_0841.jpeg" class="img-large" alt="">
+    </div>
+
+  </section>
+
+</body>
+</html>
